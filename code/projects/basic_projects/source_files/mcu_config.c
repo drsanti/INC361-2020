@@ -1,7 +1,7 @@
 /************************************************************
  * PIC24FJ48GA002 Configuration for INC361                  *
  ************************************************************
- * File:    main.c                                          *
+ * File:    mcu_config.c                                    *
  * Author:  Asst.Prof.Dr.Santi Nuratch                      *
  *          Embedded Computing and Control Laboratory       *
  *          ECC-Lab, INC, KMUTT, Thailand                   *

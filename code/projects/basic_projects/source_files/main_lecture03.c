@@ -26,7 +26,8 @@ int main(void)
     while(1)
     {
         LATB = data;
-        data = data?0x0001:data<<1;
+        data <<= 1;
+        data = data?data:0x0001;
         __delay_ms(200);
     }
 }

@@ -12,7 +12,7 @@
 #include<stdio.h>
 #include <xc.h>
 
-#define FOSC    (7370000ULL)
+#define FOSC    (32e6)
 #define FCY     (FOSC/2)
 #include <libpic30.h>
 

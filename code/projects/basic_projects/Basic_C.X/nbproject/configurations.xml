@@ -14,6 +14,7 @@
                    projectFiles="true">
       <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture02.c</itemPath>
       <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c</itemPath>
+      <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -194,6 +195,10 @@
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
       </C30Global>
+      <item path="C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture02.c"
+            ex="true"
+            overriding="false">
+      </item>
       <Simulator>
         <property key="codecoverage.enabled" value="Disable"/>
         <property key="codecoverage.enableoutputtofile" value="false"/>

@@ -21,8 +21,12 @@
 
 ---
 
-## :newspaper: Documents & Lecture Notes
+## :newspaper: Documents
 
-> Check in our Facebook group
+:newspaper: [16-Bit-Language-Tools-Libraries](http://ww1.microchip.com/downloads/en/DeviceDoc/16-Bit-Language-Tools-Libraries-DS50001456K.pdf)
+
+:newspaper: [XC16 C Compiler User's Guide](https://ww1.microchip.com/downloads/en/DeviceDoc/50002071K.pdf)
+
+> Two files above can be downloaded at [docs](./docs)
 
 ---

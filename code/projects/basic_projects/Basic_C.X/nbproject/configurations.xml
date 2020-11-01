@@ -211,6 +211,22 @@
         <C30Global>
         </C30Global>
       </item>
+      <item path="C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c"
+            ex="false"
+            overriding="false">
+        <C30>
+        </C30>
+        <C30-AR>
+        </C30-AR>
+        <C30-AS>
+        </C30-AS>
+        <C30-CO>
+        </C30-CO>
+        <C30-LD>
+        </C30-LD>
+        <C30Global>
+        </C30Global>
+      </item>
       <Simulator>
         <property key="codecoverage.enabled" value="Disable"/>
         <property key="codecoverage.enableoutputtofile" value="false"/>

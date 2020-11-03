@@ -28,6 +28,9 @@
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
             <word>Asst</word>
             <word>config</word>
+            <word>int</word>
+            <word>lld</word>
+            <word>lli</word>
             <word>mcu</word>
             <word>Nuratch</word>
             <word>Santi</word>

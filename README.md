@@ -27,6 +27,8 @@
 
 :newspaper: [XC16 C Compiler User's Guide](https://ww1.microchip.com/downloads/en/DeviceDoc/50002071K.pdf)
 
+:newspaper: [XC16 Assembler User's Guide](https://ww1.microchip.com/downloads/en/DeviceDoc/50002106C.pdf)
+
 > Two files above can be downloaded at [docs](./docs)
 
 ---

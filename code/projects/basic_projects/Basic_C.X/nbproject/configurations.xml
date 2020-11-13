@@ -16,6 +16,9 @@
       <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c</itemPath>
       <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c</itemPath>
       <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture05.c</itemPath>
+      <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture06.c</itemPath>
+      <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture07.c</itemPath>
+      <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture08.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -81,8 +84,8 @@
         <property key="enable-large-arrays" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-procedural-abstraction" value="false"/>
-        <property key="enable-short-double" value="false"/>
-        <property key="enable-symbols" value="true"/>
+        <property key="enable-short-double" value="true"/>
+        <property key="enable-symbols" value="false"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="extra-include-directories" value=""/>
         <property key="isolate-each-function" value="false"/>
@@ -228,6 +231,42 @@
         <C30Global>
         </C30Global>
       </item>
+      <item path="C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture05.c"
+            ex="true"
+            overriding="false">
+        <C30>
+        </C30>
+        <C30-AR>
+        </C30-AR>
+        <C30-AS>
+        </C30-AS>
+        <C30-CO>
+        </C30-CO>
+        <C30-LD>
+        </C30-LD>
+        <C30Global>
+        </C30Global>
+      </item>
+      <item path="C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture06.c"
+            ex="true"
+            overriding="false">
+        <C30>
+        </C30>
+        <C30-AR>
+        </C30-AR>
+        <C30-AS>
+        </C30-AS>
+        <C30-CO>
+        </C30-CO>
+        <C30-LD>
+        </C30-LD>
+        <C30Global>
+        </C30Global>
+      </item>
+      <item path="C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture07.c"
+            ex="true"
+            overriding="false">
+      </item>
       <Simulator>
         <property key="codecoverage.enabled" value="Disable"/>
         <property key="codecoverage.enableoutputtofile" value="false"/>
@@ -267,7 +306,7 @@
         <property key="uart0io.outputfile" value=""/>
         <property key="uart0io.uartioenabled" value="false"/>
         <property key="uart1io.output" value="window"/>
-        <property key="uart1io.outputfile" value=""/>
+        <property key="uart1io.outputfile" value="..\source_files\s1.txt"/>
         <property key="uart1io.uartioenabled" value="true"/>
         <property key="uart2io.output" value="window"/>
         <property key="uart2io.outputfile" value=""/>

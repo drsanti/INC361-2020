@@ -29,10 +29,13 @@
             <word>Asst</word>
             <word>config</word>
             <word>int</word>
+            <word>ld</word>
+            <word>Le</word>
             <word>lld</word>
             <word>lli</word>
             <word>mcu</word>
             <word>Nuratch</word>
+            <word>printf</word>
             <word>Santi</word>
         </spellchecker-wordlist>
     </configuration>

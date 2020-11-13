@@ -1,65 +1,73 @@
 Disassembly Listing for Basic_C
 Generated From:
 C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/Basic_C.X/dist/default/production/Basic_C.X.production.elf
-Oct 25, 2020 7:03:40 PM
+Nov 3, 2020 5:40:01 PM
 
----  C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c  ---
-1:                 /************************************************************
-2:                  * Example program for Lecture03 of INC361                  *
-3:                  ************************************************************
-4:                  * File:    main_lecture03.c                                *
-5:                  * Author:  Asst.Prof.Dr.Santi Nuratch                      *
-6:                  *          Embedded Computing and Control Laboratory       *
-7:                  *          ECC-Lab, INC, KMUTT, Thailand                   *
-8:                  ************************************************************
-9:                  * Update:  25 October 2020                                 *
-10:                 ************************************************************/
-11:                
-12:                #include<stdio.h>
-13:                #include <xc.h>
-14:                
-15:                #define FOSC    (32e6)
-16:                #define FCY     (FOSC/2)
-17:                #include <libpic30.h>
-18:                
-19:                int main(void) 
-20:                {
-0002CE  FA0002     LNK #0x2
-21:                    AD1PCFG |= 0xFFFF;
-0002D0  801960     MOV AD1PCFG, W0
-0002D2  EB8000     SETM W0
-0002D4  881960     MOV W0, AD1PCFG
-22:                    LATB  &= 0x0000;
-0002D6  801660     MOV LATB, W0
-0002D8  EF22CC     CLR LATB
-23:                    TRISB &= 0x0000;
-0002DA  801640     MOV TRISB, W0
-0002DC  EF22C8     CLR TRISB
-24:                    
-25:                    unsigned short data = 0x0001;
-0002DE  200010     MOV #0x1, W0
-0002E0  780F00     MOV W0, [W14]
-26:                    while(1)
-27:                    {
-28:                        LATB = data;
-0002E2  78009E     MOV [W14], W1
-0002E4  881661     MOV W1, LATB
-29:                        data <<= 1;
-0002E6  78001E     MOV [W14], W0
-0002E8  400000     ADD W0, W0, W0
-0002EA  780F00     MOV W0, [W14]
-30:                        data = data?data:0x0001;
-0002EC  78001E     MOV [W14], W0
-0002EE  E00000     CP0 W0
-0002F0  320002     BRA Z, .L2
-0002F2  78001E     MOV [W14], W0
-0002F4  370001     BRA .L3
-0002F6  200010     MOV #0x1, W0
-0002F8  780F00     MOV W0, [W14]
-31:                        __delay_ms(200);
-0002FA  2D4000     MOV #0xD400, W0
-0002FC  200301     MOV #0x30, W1
-0002FE  070001     RCALL ___delay32, .Letext0, .LFE0
-32:                    }
-000300  37FFF0     BRA .L4
-33:                }
+---  C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture06.c  ---
+1:                 
+2:                 #include <stdio.h>
+3:                 #include <stdint.h>
+4:                 
+5:                 int16_t gv1            = 0x12;
+6:                 //auto int16_t  gv2      = 0x34;
+7:                 //register int16_t  gv3  = 0x56;
+8:                 int main(void)
+9:                 {
+001444  FA0004     LNK #0x4
+001446  781F88     MOV W8, [W15++]
+10:                    int16_t           z = 0x12;
+001448  200120     MOV #0x12, W0
+00144A  780F00     MOV W0, [W14]
+11:                    auto     int16_t  x = 0x34;
+00144C  200340     MOV #0x34, W0
+00144E  980710     MOV W0, [W14+2]
+12:                    register int16_t  y = 0x56;
+001450  200568     MOV #0x56, W8
+13:                    
+14:                    
+15:                    printf("x: %d, y: %d, z: %d\r\n", x, y, z);
+001452  781F9E     MOV [W14], [W15++]
+001454  781F88     MOV W8, [W15++]
+001456  90009E     MOV [W14+2], W1
+001458  781F81     MOV W1, [W15++]
+00145A  2936A0     MOV #0x936A, W0
+00145C  781F80     MOV W0, [W15++]
+00145E  07F7C2     RCALL __printf_cdnopuxX
+001460  5787E8     SUB W15, #0x8, W15
+16:                    
+17:                    while(1)
+18:                    {
+19:                        x = y+z;
+001462  44001E     ADD W8, [W14], W0
+001464  980710     MOV W0, [W14+2]
+20:                        z++;
+001466  E80F1E     INC [W14], [W14]
+21:                        gv1++;
+001468  804000     MOV .L26, W0
+00146A  E80000     INC W0, W0
+00146C  884000     MOV W0, .L26
+22:                    }
+00146E  37FFF9     BRA .L2
+23:                    
+24:                    return 0;
+25:                }
+26:                
+27:                
+28:                
+29:                /*
+30:                signed char         v1;
+31:                unsigned char       v2;
+32:                
+33:                signed short int    v3;
+34:                unsigned short int  v4;
+35:                
+36:                signed int          v5;
+37:                unsigned int        v6;
+38:                
+39:                signed long int     v7;
+40:                unsigned long int   v8;
+41:                
+42:                float               v9;
+43:                
+44:                double              v10;
+45:                */

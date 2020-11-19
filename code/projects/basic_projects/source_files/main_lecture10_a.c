@@ -1,5 +1,5 @@
 /*
- * Lecture10 -- MCU Initialization
+ * Lecture10_a -- MCU Initialization
  */
 
 
@@ -65,6 +65,7 @@ void System_Clock_Init(void)
                                     // 1: Interrupts clear the DOZEN bit and reset the CPU peripheral clock ratio to 1:1
 }
 
+
 /**
  * IO Ports setting
  */
@@ -100,28 +101,44 @@ const uint8_t segment_code[] = {
     0x6F,   // 9
 };
 
+/**
+ * Display buffer
+ */
+uint8_t disp_arr[4] = {0};
 
 /**
- * Write display code to target display
+ * Display index
  */
-void Display_Write_Code(uint8_t index, uint8_t code) {
-    index %= 4;                 // 0-3
-    LATB &= ~(0xF<<8);          // Turn off all drivers
-    LATB = code;                // Write display data
-    LATB |= 1<<(8+index);       // Turn on digit pointed by index
-    __delay_ms(5);              // Delay
+uint8_t disp_idx = 0;
+
+
+/**
+ * Update the display
+ * This function should be called every 5 milliseconds
+ */
+void Display_Update(void) {
+    LATB &= ~(0xF<<8);              // Turn off all drivers
+    LATB = disp_arr[disp_idx];      // Write display data
+    LATB |= 1<<(8+disp_idx);        // Turn on digit pointed by index
+    disp_idx = (disp_idx + 1)%4;    // Next position
 }
 
 
 /**
- * Write a digit to target display
+ * Write display code to display buffer
+ */
+void Display_Write_Code(uint8_t index, uint8_t code) {
+    index %= 4;
+    uint8_t temp = disp_arr[index] & 0x80;
+    disp_arr[index] = (temp | code);
+}
+
+
+/**
+ * Write a digit code to display buffer
  */
 void Display_Write_Digit(uint8_t index, uint8_t digit) {
-    digit %= 10;                // 0-9
-    LATB &= ~(0xF<<8);          // Turn off all drivers
-    LATB = segment_code[digit]; // Write display data
-    LATB |= 1<<(8+index);       // Turn on digit pointed by index
-    __delay_ms(5);              // Delay
+    Display_Write_Code(index, segment_code[digit]);
 }
 
 
@@ -184,179 +201,24 @@ int main(void)
     LATB  &= 0xF000; // LATB<11:0>  = 0
 
     uint16_t ticks = 0;
-    uint16_t counter = 0;
+    uint16_t counter = 1234;
     
     while(!0) {
-
-        /**
-         * Example1: Display 1234
-         */
-        
-        /*
-        LATB &= ~(0xF<<8);      // Turn off all drivers
-        LATB = segment_code[1]; // Write display data
-        LATB |= 1<<8;           // Turn on digit 0 (right most)
-        __delay_ms(5);          // Delay
         
         
-        LATB &= ~(0xF<<8);      // Turn off all digits
-        LATB = segment_code[2]; // Write display data
-        LATB |= 1<<9;           // Turn on digit 1 
-        __delay_ms(5);          // Delay
-        
-        
-        LATB &= ~(0xF<<8);      // Turn off all digits
-        LATB = segment_code[3]; // Data for digit #2 (right most)
-        LATB |= 1<<10;          // Turn on digit 2
-        __delay_ms(5);          // Delay for digit #2;
-        
-        
-        LATB &= ~(0xF<<8);      // Turn off all digits
-        LATB = segment_code[4]; // Write display data
-        LATB |= 1<<11;          // Turn on digit 3 (left most)
-        __delay_ms(5);          // Delay
-        */
-        
-        
-        /**
-        * Example2: Display 1234 using for loop
-        */
-        
-        /*
-        uint8_t i;
-        for(i=0; i<4; i++) {
-            LATB &= ~(0xF<<8);          // Turn off all drivers
-            LATB = segment_code[i+1];   // Write display data
-            LATB |= 1<<(8+i);           // Turn on digit 0 (right most)
-            __delay_ms(5);              // Delay
-        }
-        */
-        
-        
-        /**
-        * Example3: Display 9876
-        */
-        /*
-        uint8_t i;
-        for(i=0; i<4; i++) {
-            LATB &= ~(0xF<<8);          // Turn off all drivers
-            LATB = segment_code[9-i];   // Write display data
-            LATB |= 1<<(8+i);           // Turn on digit 0 (right most)
-            __delay_ms(5);              // Delay
-        }
-        */
-        
-        
-        /**
-        * Example4: Using Display_Write_Data() function
-        */
-        
-        /*
-        Display_Write_Code(0, segment_code[3]);
-        Display_Write_Code(1, segment_code[2]);
-        Display_Write_Code(2, segment_code[1]);
-        Display_Write_Code(3, segment_code[0]);
-        */
-        
-        
-        /**
-        * Example5: Using Display_Write_Code() function in for loop
-        */
-        
-        /*
-        uint8_t i;
-        for(i=0; i<4; i++) {
-            Display_Write_Code(i, segment_code[3-i]);
-        }
-        */
-        
-        
-        /**
-        * Example6: Using Display_Write_Digit()
-        */
-        
-        /*
-        Display_Write_Digit(0, 7);
-        Display_Write_Digit(1, 8);
-        Display_Write_Digit(2, 9);
-        Display_Write_Digit(3, 0);
-        */
-        
-        
-        /**
-        * Example7: Using Display_Write_Digit() function in for loop
-        */
-        
-        /*
-         * 
-        uint8_t i;
-        for(i=0; i<4; i++) {
-            Display_Write_Digit(i, (7+i));
-        }
-        */
-        
-        
-        /**
-        * Example8: Display control technique
-        */
-        
-        /*
-        uint16_t value = 1234;
-        Display_Write_Digit(3, value%10);
-        value /= 10;
-        Display_Write_Digit(2, value%10);
-        value /= 10;
-        Display_Write_Digit(1, value%10);
-        value /= 10;
-        Display_Write_Digit(0, value%10);
-        */
-        
-        
-        /**
-        * Example9: Display control technique using for loop
-        */
-        
-        /*
-        uint8_t i;
-        uint16_t value = 1234;
-        for(i=0; i<4; i++) {
-            Display_Write_Digit(3-i, value%10);
-            value /= 10;
-        }
-        */
-
-        /*
-        Example10: Display control technique, turn off zeros
-        */
-        /*
-        uint16_t value = 5;
-        uint8_t i;
-        for(i=0; i<4; i++) {
-            Display_Write_Digit(3-i, value%10);
-            value/=10;
-            if(value<=0) break;
-        }
-        */
-        
-
-        /*
-        Example11: Using Display_Write_Uint16() function
-        */
-        
-        /*
-        Display_Write_Uint16(1234);
-        */
-        
-        
-        /*
-        Example12: Counter
-        */
-        if( (++ticks % 50) == 0) {
-            ticks = 0;
+        if( (++ticks % 190) == 0) {
             counter++;
         }
         
+        if( (ticks % (190>>3)) == 0) {
+            disp_arr[3] ^= 0x80;
+        }
+        
         Display_Write_Uint16(counter);
+        
+        
+        Display_Update();
+        __delay_ms(500);
     }
 }
 

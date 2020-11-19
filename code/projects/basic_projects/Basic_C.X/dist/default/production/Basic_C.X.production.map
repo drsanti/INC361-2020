@@ -18,8 +18,8 @@ Command:
   -Lc:/program files/microchip/xc16/v1.60/bin/bin/../../support/dsPIC33C/gld \
   -Lc:/program files/microchip/xc16/v1.60/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files/microchip/xc16/v1.60/bin/bin/../../support/dsPIC33F/gld \
+  build/default/production/_ext/1668980576/main_lecture03.o \
   build/default/production/_ext/1668980576/mcu_config.o \
-  build/default/production/_ext/1668980576/main_lecture10.o \
   --defsym=__MPLAB_BUILD=1 \
   -Tp24FJ48GA002.gld.00 \
   --stack=16 \
@@ -54,7 +54,7 @@ c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(data
 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normal.Leo)
                               (__crt_start_mode_normal)
 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-                              build/default/production/_ext/1668980576/main_lecture10.o (___delay32)
+                              build/default/production/_ext/1668980576/main_lecture03.o (___delay32)
 
 
 xc16-ld 1.60 (B)
@@ -68,11 +68,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xce           0x135  (309)
-.const                       0x2ce                 0xa             0xf  (15)
-.text                        0x2d8               0x204           0x306  (774)
-.init.delay32                0x4dc                0x1c            0x2a  (42)
+.text                        0x2ce                0x34            0x4e  (78)
+.init.delay32                0x302                0x1c            0x2a  (42)
 
-                 Total "program" memory used (bytes):          0x474  (1140) 2%
+                 Total "program" memory used (bytes):          0x1ad  (429) <1%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -97,37 +96,21 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000252                  __data_init_standard
                   0x000252                  __data_init
+                  0x000252                  __data_init_standard
                   0x0002c8                  __DefaultInterrupt
-                  0x0002ce                  _segment_code
-                  0x0002d8                  _System_Clock_Init
-                  0x0002f4                  _System_IO_Init
-                  0x00030c                  _Display_Write_Code
-                  0x00033e                  _Display_Write_Digit
-                  0x000384                  _Display_Write_Uint16_Z
-                  0x0003ca                  _Display_Write_Uint16_Nz
-                  0x00044c                  _Display_Write_Uint16
-                  0x00049c                  _main
-                  0x0004dc                  ___delay32
+                  0x0002ce                  _main
+                  0x000302                  ___delay32
 
 External Symbols in Program Memory (by name):
 
-                  0x00030c                  _Display_Write_Code
-                  0x00033e                  _Display_Write_Digit
-                  0x00044c                  _Display_Write_Uint16
-                  0x0003ca                  _Display_Write_Uint16_Nz
-                  0x000384                  _Display_Write_Uint16_Z
-                  0x0002d8                  _System_Clock_Init
-                  0x0002f4                  _System_IO_Init
                   0x0002c8                  __DefaultInterrupt
-                  0x0004dc                  ___delay32
+                  0x000302                  ___delay32
                   0x000252                  __data_init
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x00049c                  _main
-                  0x0002ce                  _segment_code
+                  0x0002ce                  _main
 
 Memory Configuration
 
@@ -144,8 +127,8 @@ CONFIG1          0x0083fe           0x000002
 
 Linker script and memory map
 
+LOAD build/default/production/_ext/1668980576/main_lecture03.o
 LOAD build/default/production/_ext/1668980576/mcu_config.o
-LOAD build/default/production/_ext/1668980576/main_lecture10.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD pPIC24Fxxx
 LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libfx-elf.a
@@ -200,28 +183,24 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x589
+.debug_info       0x000000        0x1fe
  *(.debug_info)
- .debug_info      0x000000        0x589 build/default/production/_ext/1668980576/main_lecture10.o
+ .debug_info      0x000000        0x1fe build/default/production/_ext/1668980576/main_lecture03.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x14d
+.debug_abbrev     0x000000         0x6b
  *(.debug_abbrev)
- .debug_abbrev    0x000000          0x1 build/default/production/_ext/1668980576/mcu_config.o
- .debug_abbrev    0x000001        0x14c build/default/production/_ext/1668980576/main_lecture10.o
+ .debug_abbrev    0x000000         0x6a build/default/production/_ext/1668980576/main_lecture03.o
+ .debug_abbrev    0x00006a          0x1 build/default/production/_ext/1668980576/mcu_config.o
 
-.debug_line       0x000000        0x1c9
+.debug_line       0x000000        0x17e
  *(.debug_line)
- .debug_line      0x000000         0x1a build/default/production/_ext/1668980576/mcu_config.o
- .debug_line      0x00001a        0x1af build/default/production/_ext/1668980576/main_lecture10.o
+ .debug_line      0x000000        0x164 build/default/production/_ext/1668980576/main_lecture03.o
+ .debug_line      0x000164         0x1a build/default/production/_ext/1668980576/mcu_config.o
 
-.debug_frame      0x000000         0xe4
+.debug_frame      0x000000         0x2e
  *(.debug_frame)
- .debug_frame     0x000000         0xe4 build/default/production/_ext/1668980576/main_lecture10.o
-
-.debug_str        0x000000         0x18
- *(.debug_str)
- .debug_str       0x000000         0x18 build/default/production/_ext/1668980576/main_lecture10.o
+ .debug_frame     0x000000         0x2e build/default/production/_ext/1668980576/main_lecture03.o
 
 .debug_loc
  *(.debug_loc)
@@ -230,10 +209,10 @@ __CONFIG1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000         0xd4
+                  0x000000         0x1b
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0xd4 build/default/production/_ext/1668980576/main_lecture10.o
+                  0x000000         0x1b build/default/production/_ext/1668980576/main_lecture03.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -241,7 +220,7 @@ __CONFIG1
 .debug_aranges    0x000000         0x18
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/_ext/1668980576/main_lecture10.o
+                  0x000000         0x18 build/default/production/_ext/1668980576/main_lecture03.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -829,23 +808,23 @@ END GROUP
 OUTPUT(dist/default/production/Basic_C.X.production.elf elf32-pic30)
 LOAD default_isr
 
-__c30_signature
-                  0x000018         0x1e
- __c30_signature
-                  0x000018          0x6 build/default/production/_ext/1668980576/mcu_config.o
- __c30_signature
-                  0x00001e          0x6 build/default/production/_ext/1668980576/main_lecture10.o
- __c30_signature
-                  0x000024          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
- __c30_signature
-                  0x00002a          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(data_init_standard.o)
- __c30_signature
-                  0x000030          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-
 .debug_pubtypes
-                  0x000036         0x58
+                  0x000018         0x1f
  .debug_pubtypes
-                  0x000036         0x58 build/default/production/_ext/1668980576/main_lecture10.o
+                  0x000018         0x1f build/default/production/_ext/1668980576/main_lecture03.o
+
+__c30_signature
+                  0x000037         0x1e
+ __c30_signature
+                  0x000037          0x6 build/default/production/_ext/1668980576/main_lecture03.o
+ __c30_signature
+                  0x00003d          0x6 build/default/production/_ext/1668980576/mcu_config.o
+ __c30_signature
+                  0x000043          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
+ __c30_signature
+                  0x000049          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(data_init_standard.o)
+ __c30_signature
+                  0x00004f          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
 
 .config_JTAGEN    0x0083fe          0x2
  .config_JTAGEN
@@ -854,21 +833,10 @@ __c30_signature
 .config_IESO      0x0083fc          0x2
  .config_IESO     0x0083fc          0x2 build/default/production/_ext/1668980576/mcu_config.o
 
-.const              0x82ce          0xa load address 0x0002ce  
- .const             0x82ce          0xa build/default/production/_ext/1668980576/main_lecture10.o
-                    0x82ce                  _segment_code
+.text             0x0002ce         0x34
+ .text            0x0002ce         0x34 build/default/production/_ext/1668980576/main_lecture03.o
+                  0x0002ce                  _main
 
-.text             0x0002d8        0x204
- .text            0x0002d8        0x204 build/default/production/_ext/1668980576/main_lecture10.o
-                  0x0002d8                  _System_Clock_Init
-                  0x0002f4                  _System_IO_Init
-                  0x00030c                  _Display_Write_Code
-                  0x00033e                  _Display_Write_Digit
-                  0x000384                  _Display_Write_Uint16_Z
-                  0x0003ca                  _Display_Write_Uint16_Nz
-                  0x00044c                  _Display_Write_Uint16
-                  0x00049c                  _main
-
-.init.delay32     0x0004dc         0x1c
- .init.delay32    0x0004dc         0x1c c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-                  0x0004dc                  ___delay32
+.init.delay32     0x000302         0x1c
+ .init.delay32    0x000302         0x1c c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
+                  0x000302                  ___delay32

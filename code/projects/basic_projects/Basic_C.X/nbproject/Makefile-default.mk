@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture10.c
+SOURCEFILES_QUOTED_IF_SPACED=C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1668980576/mcu_config.o ${OBJECTDIR}/_ext/1668980576/main_lecture10.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1668980576/mcu_config.o.d ${OBJECTDIR}/_ext/1668980576/main_lecture10.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1668980576/main_lecture03.o ${OBJECTDIR}/_ext/1668980576/mcu_config.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1668980576/main_lecture03.o.d ${OBJECTDIR}/_ext/1668980576/mcu_config.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1668980576/mcu_config.o ${OBJECTDIR}/_ext/1668980576/main_lecture10.o
+OBJECTFILES=${OBJECTDIR}/_ext/1668980576/main_lecture03.o ${OBJECTDIR}/_ext/1668980576/mcu_config.o
 
 # Source Files
-SOURCEFILES=C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture10.c
+SOURCEFILES=C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c
 
 
 
@@ -95,30 +95,30 @@ MP_LINKER_FILE_OPTION=,--script=p24FJ48GA002.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/_ext/1668980576/main_lecture03.o: C\:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c  .generated_files/219b015de0dbd6796db3813b6c501a343dab0eb5.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/1668980576" 
+	@${RM} ${OBJECTDIR}/_ext/1668980576/main_lecture03.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1668980576/main_lecture03.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c  -o ${OBJECTDIR}/_ext/1668980576/main_lecture03.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/1668980576/main_lecture03.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -msmall-data -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 ${OBJECTDIR}/_ext/1668980576/mcu_config.o: C\:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c  .generated_files/4408d52fcf1fa941ec07fd16391eb80468182d3f.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1668980576" 
 	@${RM} ${OBJECTDIR}/_ext/1668980576/mcu_config.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1668980576/mcu_config.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c  -o ${OBJECTDIR}/_ext/1668980576/mcu_config.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/1668980576/mcu_config.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -msmall-data -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/_ext/1668980576/main_lecture10.o: C\:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture10.c  .generated_files/f593b98d1aebf7bdf074edd4e176caeb1a3bfb31.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
-	@${MKDIR} "${OBJECTDIR}/_ext/1668980576" 
-	@${RM} ${OBJECTDIR}/_ext/1668980576/main_lecture10.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1668980576/main_lecture10.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture10.c  -o ${OBJECTDIR}/_ext/1668980576/main_lecture10.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/1668980576/main_lecture10.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -msmall-data -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
 else
+${OBJECTDIR}/_ext/1668980576/main_lecture03.o: C\:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c  .generated_files/967ed74131c3dc6693a16d14e47d0b2c27670f3a.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/1668980576" 
+	@${RM} ${OBJECTDIR}/_ext/1668980576/main_lecture03.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1668980576/main_lecture03.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c  -o ${OBJECTDIR}/_ext/1668980576/main_lecture03.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/1668980576/main_lecture03.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -msmall-data -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 ${OBJECTDIR}/_ext/1668980576/mcu_config.o: C\:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c  .generated_files/b13aa87fa7782135914e12b4ee8c4f5f2ef8d775.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1668980576" 
 	@${RM} ${OBJECTDIR}/_ext/1668980576/mcu_config.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1668980576/mcu_config.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c  -o ${OBJECTDIR}/_ext/1668980576/mcu_config.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/1668980576/mcu_config.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -msmall-data -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/_ext/1668980576/main_lecture10.o: C\:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture10.c  .generated_files/80a6b0b3b66bdeef47fe6d86f9efd4b49902b2c3.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
-	@${MKDIR} "${OBJECTDIR}/_ext/1668980576" 
-	@${RM} ${OBJECTDIR}/_ext/1668980576/main_lecture10.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1668980576/main_lecture10.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture10.c  -o ${OBJECTDIR}/_ext/1668980576/main_lecture10.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/1668980576/main_lecture10.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -msmall-data -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

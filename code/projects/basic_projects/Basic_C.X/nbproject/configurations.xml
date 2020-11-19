@@ -20,7 +20,6 @@
       <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture08.c</itemPath>
       <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture09.c</itemPath>
       <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/mcu_config.c</itemPath>
-      <itemPath>C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture10.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -217,7 +216,7 @@
         </C30Global>
       </item>
       <item path="C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture03.c"
-            ex="true"
+            ex="false"
             overriding="false">
         <C30>
         </C30>
@@ -299,6 +298,18 @@
       <item path="C:/Users/drsanti/Desktop/INC361-2020/code/projects/basic_projects/source_files/main_lecture09.c"
             ex="true"
             overriding="false">
+        <C30>
+        </C30>
+        <C30-AR>
+        </C30-AR>
+        <C30-AS>
+        </C30-AS>
+        <C30-CO>
+        </C30-CO>
+        <C30-LD>
+        </C30-LD>
+        <C30Global>
+        </C30Global>
       </item>
       <Simulator>
         <property key="codecoverage.enabled" value="Disable"/>

@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main_lecture11.c mcu_config.c
+SOURCEFILES_QUOTED_IF_SPACED=mcu_config.c main_lecture12.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main_lecture11.o ${OBJECTDIR}/mcu_config.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main_lecture11.o.d ${OBJECTDIR}/mcu_config.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcu_config.o ${OBJECTDIR}/main_lecture12.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcu_config.o.d ${OBJECTDIR}/main_lecture12.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main_lecture11.o ${OBJECTDIR}/mcu_config.o
+OBJECTFILES=${OBJECTDIR}/mcu_config.o ${OBJECTDIR}/main_lecture12.o
 
 # Source Files
-SOURCEFILES=main_lecture11.c mcu_config.c
+SOURCEFILES=mcu_config.c main_lecture12.c
 
 
 
@@ -95,30 +95,30 @@ MP_LINKER_FILE_OPTION=,--script=p24FJ48GA002.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/main_lecture11.o: main_lecture11.c  .generated_files/d3189f299b30511afd36b5fbfbe454fcd1c10a48.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main_lecture11.o.d 
-	@${RM} ${OBJECTDIR}/main_lecture11.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  main_lecture11.c  -o ${OBJECTDIR}/main_lecture11.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main_lecture11.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
 ${OBJECTDIR}/mcu_config.o: mcu_config.c  .generated_files/9bcbdce5d5b9ca363fe5ceaca901fef01074ef2e.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/mcu_config.o.d 
 	@${RM} ${OBJECTDIR}/mcu_config.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  mcu_config.c  -o ${OBJECTDIR}/mcu_config.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcu_config.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-else
-${OBJECTDIR}/main_lecture11.o: main_lecture11.c  .generated_files/4c1900bf8be5194cf3ca7cd4fe83ef2254d8e0ff.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
+${OBJECTDIR}/main_lecture12.o: main_lecture12.c  .generated_files/a677e251cfd351953753ca8f10fc3665312b8ac.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main_lecture11.o.d 
-	@${RM} ${OBJECTDIR}/main_lecture11.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  main_lecture11.c  -o ${OBJECTDIR}/main_lecture11.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main_lecture11.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	@${RM} ${OBJECTDIR}/main_lecture12.o.d 
+	@${RM} ${OBJECTDIR}/main_lecture12.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main_lecture12.c  -o ${OBJECTDIR}/main_lecture12.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main_lecture12.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+else
 ${OBJECTDIR}/mcu_config.o: mcu_config.c  .generated_files/eaf81ef2f28abe1f7ba8b614c78d5201b31aa41a.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/mcu_config.o.d 
 	@${RM} ${OBJECTDIR}/mcu_config.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  mcu_config.c  -o ${OBJECTDIR}/mcu_config.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcu_config.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/main_lecture12.o: main_lecture12.c  .generated_files/a2644b0f4f602179b703617eb339495a0f4462fc.flag .generated_files/74709fa1d19e35bc709bb7e9e4fe6fe1caa6a4d6.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main_lecture12.o.d 
+	@${RM} ${OBJECTDIR}/main_lecture12.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main_lecture12.c  -o ${OBJECTDIR}/main_lecture12.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main_lecture12.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

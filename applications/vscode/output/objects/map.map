@@ -10,7 +10,7 @@ Command:
   -Lc:/ecc-lab/embedded/compilers/xc16/bin/bin/.. \
   -Lc:/ecc-lab/embedded/compilers/xc16/bin/bin/../../lib \
   -Lc:/ecc-lab/embedded/compilers/xc16/bin/bin/../../support/PIC24F/gld \
-  ./output/objects/main_lecture12.o \
+  ./output/objects/main_lecture13.o \
   ./output/objects/mcu_config.o \
   --defsym=__MPLAB_buildD=1 \
   -T24FJ48GA002.gld.00 \
@@ -46,7 +46,7 @@ c:/ecc-lab/embedded/compilers/xc16/bin/bin/../../lib\liblega-pic30-elf.a(data_in
 c:/ecc-lab/embedded/compilers/xc16/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normal.Leo)
                               (__crt_start_mode_normal)
 c:/ecc-lab/embedded/compilers/xc16/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-                              ./output/objects/main_lecture12.o (___delay32)
+                              ./output/objects/main_lecture13.o (___delay32)
 
 
 xc16-ld 1.50 (A)
@@ -60,56 +60,72 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0xc00                0xd0           0x138  (312)
-.text                        0xcd0                0x74            0xae  (174)
-.init.delay32                0xd44                0x1c            0x2a  (42)
+.const                       0xcd0                 0xa             0xf  (15)
+.text                        0xcda                0xa6            0xf9  (249)
+.init.delay32                0xd80                0x1c            0x2a  (42)
+.dinit                       0xd9c                 0xe            0x15  (21)
 
-                 Total "program" memory used (bytes):          0x210  (528) 1%
+                 Total "program" memory used (bytes):          0x27f  (639) 1%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.heap                        0x800                   0           0xc18  (3096)
+.nbss                        0x800                   0             0x2  (2)
+.bss                         0x802                   0             0x4  (4)
+.heap                        0x806                   0           0xc18  (3096)
 
-                 Total "data" memory used (bytes):          0xc18  (3096) 37%
+                 Total "data" memory used (bytes):          0xc1e  (3102) 37%
 
 
 Dynamic Memory Usage
 
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
-heap                         0x800                               0xc18  (3096)
-stack                       0x1418                              0x13e8  (5096)
+heap                         0x806                               0xc18  (3096)
+stack                       0x141e                              0x13e2  (5090)
 
-                 Maximum dynamic memory (bytes):         0x2000  (8192)
+                 Maximum dynamic memory (bytes):         0x1ffa  (8186)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
+
+External Symbols in Data Memory (by address):
+
+                    0x0802                  _disp_buf
+
+External Symbols in Data Memory (by name):
+
+                    0x0802                  _disp_buf
 
 External Symbols in Program Memory (by address):
 
                   0x000c02                  __resetPRI
                   0x000c3e                  __psv_init
-                  0x000c54                  __data_init
                   0x000c54                  __data_init_standard
+                  0x000c54                  __data_init
                   0x000cca                  __DefaultInterrupt
-                  0x000cd0                  _System_Clock_Init
-                  0x000ce0                  _System_IO_Init
-                  0x000cfa                  _main
-                  0x000d44                  ___delay32
+                  0x000cd0                  _disp_hex
+                  0x000cda                  _System_Clock_Init
+                  0x000cea                  _System_IO_Init
+                  0x000d04                  _Display_Multiplex
+                  0x000d4e                  _main
+                  0x000d80                  ___delay32
 
 External Symbols in Program Memory (by name):
 
-                  0x000cd0                  _System_Clock_Init
-                  0x000ce0                  _System_IO_Init
+                  0x000d04                  _Display_Multiplex
+                  0x000cda                  _System_Clock_Init
+                  0x000cea                  _System_IO_Init
                   0x000cca                  __DefaultInterrupt
-                  0x000d44                  ___delay32
+                  0x000d80                  ___delay32
                   0x000c54                  __data_init
                   0x000c54                  __data_init_standard
                   0x000c3e                  __psv_init
                   0x000c02                  __resetPRI
-                  0x000cfa                  _main
+                  0x000cd0                  _disp_hex
+                  0x000d4e                  _main
 
 Memory Configuration
 
@@ -126,7 +142,7 @@ CONFIG1          0x0083fe           0x000002
 
 Linker script and memory map
 
-LOAD ./output/objects/main_lecture12.o
+LOAD ./output/objects/main_lecture13.o
 LOAD ./output/objects/mcu_config.o
                     0x0001                  __MPLAB_buildD = 0x1
 LOAD pPIC24Fxxx
@@ -184,28 +200,28 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x37b
+.debug_info       0x000000        0x407
  *(.debug_info)
- .debug_info      0x000000        0x37b ./output/objects/main_lecture12.o
+ .debug_info      0x000000        0x407 ./output/objects/main_lecture13.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000         0xee
+.debug_abbrev     0x000000        0x13e
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0xed ./output/objects/main_lecture12.o
- .debug_abbrev    0x0000ed          0x1 ./output/objects/mcu_config.o
+ .debug_abbrev    0x000000        0x13d ./output/objects/main_lecture13.o
+ .debug_abbrev    0x00013d          0x1 ./output/objects/mcu_config.o
 
-.debug_line       0x000000        0x10d
+.debug_line       0x000000        0x112
  *(.debug_line)
- .debug_line      0x000000         0xf3 ./output/objects/main_lecture12.o
- .debug_line      0x0000f3         0x1a ./output/objects/mcu_config.o
+ .debug_line      0x000000         0xf8 ./output/objects/main_lecture13.o
+ .debug_line      0x0000f8         0x1a ./output/objects/mcu_config.o
 
-.debug_frame      0x000000         0x62
+.debug_frame      0x000000         0x7c
  *(.debug_frame)
- .debug_frame     0x000000         0x62 ./output/objects/main_lecture12.o
+ .debug_frame     0x000000         0x7c ./output/objects/main_lecture13.o
 
-.debug_str        0x000000          0xb
+.debug_str        0x000000         0x1d
  *(.debug_str)
- .debug_str       0x000000          0xb ./output/objects/main_lecture12.o
+ .debug_str       0x000000         0x1d ./output/objects/main_lecture13.o
 
 .debug_loc
  *(.debug_loc)
@@ -214,10 +230,10 @@ __CONFIG1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000         0x44
+                  0x000000         0x74
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x44 ./output/objects/main_lecture12.o
+                  0x000000         0x74 ./output/objects/main_lecture13.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -225,7 +241,7 @@ __CONFIG1
 .debug_aranges    0x000000         0x18
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 ./output/objects/main_lecture12.o
+                  0x000000         0x18 ./output/objects/main_lecture13.o
 
 .ivt              0x000004         0xfc
                   0x000004          0x4 LONG 0xcca DEFINED (__ReservedTrap0)?ABSOLUTE (__ReservedTrap0):ABSOLUTE (__DefaultInterrupt)
@@ -1066,16 +1082,17 @@ END GROUP
 OUTPUT(./output/objects/elf.elf elf32-pic30)
 LOAD default_isr
 LOAD heap
+LOAD data_init
 
 .debug_pubtypes
                   0x000018         0x4c
  .debug_pubtypes
-                  0x000018         0x4c ./output/objects/main_lecture12.o
+                  0x000018         0x4c ./output/objects/main_lecture13.o
 
 __c30_signature
                   0x000064         0x1e
  __c30_signature
-                  0x000064          0x6 ./output/objects/main_lecture12.o
+                  0x000064          0x6 ./output/objects/main_lecture13.o
  __c30_signature
                   0x00006a          0x6 ./output/objects/mcu_config.o
  __c30_signature
@@ -1085,8 +1102,15 @@ __c30_signature
  __c30_signature
                   0x00007c          0x6 c:/ecc-lab/embedded/compilers/xc16/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
 
-.heap               0x0800        0xc18
- .heap              0x0800        0xc18 heap
+.nbss               0x0800          0x2
+ .nbss              0x0800          0x2 ./output/objects/main_lecture13.o
+
+.bss                0x0802          0x4
+ .bss               0x0802          0x4 ./output/objects/main_lecture13.o
+                    0x0802                  _disp_buf
+
+.heap               0x0806        0xc18
+ .heap              0x0806        0xc18 heap
 
 .config_JTAGEN    0x0083fe          0x2
  .config_JTAGEN
@@ -1095,12 +1119,20 @@ __c30_signature
 .config_IESO      0x0083fc          0x2
  .config_IESO     0x0083fc          0x2 ./output/objects/mcu_config.o
 
-.text             0x000cd0         0x74
- .text            0x000cd0         0x74 ./output/objects/main_lecture12.o
-                  0x000cd0                  _System_Clock_Init
-                  0x000ce0                  _System_IO_Init
-                  0x000cfa                  _main
+.const              0x8cd0          0xa load address 0x000cd0  
+ .const             0x8cd0          0xa ./output/objects/main_lecture13.o
+                    0x8cd0                  _disp_hex
 
-.init.delay32     0x000d44         0x1c
- .init.delay32    0x000d44         0x1c c:/ecc-lab/embedded/compilers/xc16/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-                  0x000d44                  ___delay32
+.text             0x000cda         0xa6
+ .text            0x000cda         0xa6 ./output/objects/main_lecture13.o
+                  0x000cda                  _System_Clock_Init
+                  0x000cea                  _System_IO_Init
+                  0x000d04                  _Display_Multiplex
+                  0x000d4e                  _main
+
+.init.delay32     0x000d80         0x1c
+ .init.delay32    0x000d80         0x1c c:/ecc-lab/embedded/compilers/xc16/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
+                  0x000d80                  ___delay32
+
+.dinit            0x000d9c          0xe
+ .dinit           0x000d9c          0xe data_init

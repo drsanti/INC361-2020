@@ -53,16 +53,16 @@ int main(void) {
 
         /*
         for(idx=11; idx>=8; idx--) {
-            LATB ^= 1<<idx;      // DIGIT<idx> ON
+            LATB ^= 1<<idx;      // DIGIT<idx-8> ON
             __delay_ms(500);
-            LATB ^= 1<<idx;      // DIGIT3<idx> OFF
+            LATB ^= 1<<idx;      // DIGIT3<idx-8> OFF
         }
         */
 
         for(idx=11; idx>=8; idx--) {
-            LATB |= 1<<idx;         // DIGIT<idx> ON
+            LATB |= 1<<idx;         // DIGIT<idx-8> ON
             __delay_ms(500);
-            LATB &= ~(1<<idx);      // DIGIT3<idx> OFF
+            LATB &= ~(1<<idx);      // DIGIT3<idx-8> OFF
         }
     }
 }

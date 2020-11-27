@@ -19,7 +19,7 @@ Command:
   -Lc:/program files/microchip/xc16/v1.60/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files/microchip/xc16/v1.60/bin/bin/../../support/dsPIC33F/gld \
   build/default/debug/mcu_config.o \
-  build/default/debug/main_lecture13.o \
+  build/default/debug/main_lecture15.o \
   --defsym=__MPLAB_BUILD=1 \
   --defsym=__MPLAB_DEBUG=1 \
   --defsym=__DEBUG=1 \
@@ -56,8 +56,6 @@ c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(data
                               c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o) (__data_init_standard)
 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normal.Leo)
                               (__crt_start_mode_normal)
-c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-                              build/default/debug/main_lecture13.o (___delay32)
 
 
 xc16-ld 1.60 (B)
@@ -71,20 +69,21 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xce           0x135  (309)
-.text                        0x2ce                0x88            0xcc  (204)
-.init.delay32                0x356                0x1c            0x2a  (42)
-.dinit                       0x372                0x10            0x18  (24)
+.const                       0x2ce                0x10            0x18  (24)
+.text                        0x2de               0x11c           0x1aa  (426)
+.dinit                       0x3fa                0x12            0x1b  (27)
 
-                 Total "program" memory used (bytes):          0x243  (579) 1%
+                 Total "program" memory used (bytes):          0x312  (786) 1%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.data                        0x800                   0             0xa  (10)
+.nbss                        0x800                   0             0x2  (2)
+.data                        0x802                   0             0x4  (4)
 
-                 Total "data" memory used (bytes):            0xa  (10) <1%
+                 Total "data" memory used (bytes):            0x6  (6) <1%
 
 
 Dynamic Memory Usage
@@ -92,20 +91,20 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x80a                              0x1ff6  (8182)
+stack                        0x806                              0x1ffa  (8186)
 
-                 Maximum dynamic memory (bytes):         0x1ff6  (8182)
+                 Maximum dynamic memory (bytes):         0x1ffa  (8186)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
 
 External Symbols in Data Memory (by address):
 
-                    0x0800                  _disp_hex
+                    0x0802                  _disp_buf
 
 External Symbols in Data Memory (by name):
 
-                    0x0800                  _disp_hex
+                    0x0802                  _disp_buf
 
 External Symbols in Program Memory (by address):
 
@@ -114,22 +113,30 @@ External Symbols in Program Memory (by address):
                   0x000252                  __data_init
                   0x000252                  __data_init_standard
                   0x0002c8                  __DefaultInterrupt
-                  0x0002ce                  _System_Clock_Init
-                  0x0002de                  _System_IO_Init
-                  0x0002f8                  _main
-                  0x000356                  ___delay32
+                  0x0002ce                  _disp_hex
+                  0x0002de                  _System_Clock_Init
+                  0x0002ee                  _System_IO_Init
+                  0x000308                  _Display_Multiplex
+                  0x000352                  _Display_Uint
+                  0x00038a                  _Display_Uhex
+                  0x0003b4                  _System_Timer1_Init
+                  0x0003c8                  _main
 
 External Symbols in Program Memory (by name):
 
-                  0x0002ce                  _System_Clock_Init
-                  0x0002de                  _System_IO_Init
+                  0x000308                  _Display_Multiplex
+                  0x00038a                  _Display_Uhex
+                  0x000352                  _Display_Uint
+                  0x0002de                  _System_Clock_Init
+                  0x0002ee                  _System_IO_Init
+                  0x0003b4                  _System_Timer1_Init
                   0x0002c8                  __DefaultInterrupt
-                  0x000356                  ___delay32
                   0x000252                  __data_init
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x0002f8                  _main
+                  0x0002ce                  _disp_hex
+                  0x0003c8                  _main
 
 Memory Configuration
 
@@ -147,7 +154,7 @@ CONFIG1          0x0083fe           0x000002
 Linker script and memory map
 
 LOAD build/default/debug/mcu_config.o
-LOAD build/default/debug/main_lecture13.o
+LOAD build/default/debug/main_lecture15.o
                     0x0001                  __MPLAB_BUILD = 0x1
                     0x0001                  __MPLAB_DEBUG = 0x1
                     0x0001                  __DEBUG = 0x1
@@ -205,28 +212,28 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x3b6
+.debug_info       0x000000        0x613
  *(.debug_info)
- .debug_info      0x000000        0x3b6 build/default/debug/main_lecture13.o
+ .debug_info      0x000000        0x613 build/default/debug/main_lecture15.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x122
+.debug_abbrev     0x000000        0x14d
  *(.debug_abbrev)
  .debug_abbrev    0x000000          0x1 build/default/debug/mcu_config.o
- .debug_abbrev    0x000001        0x121 build/default/debug/main_lecture13.o
+ .debug_abbrev    0x000001        0x14c build/default/debug/main_lecture15.o
 
-.debug_line       0x000000        0x13e
+.debug_line       0x000000        0x15a
  *(.debug_line)
  .debug_line      0x000000         0x1a build/default/debug/mcu_config.o
- .debug_line      0x00001a        0x124 build/default/debug/main_lecture13.o
+ .debug_line      0x00001a        0x140 build/default/debug/main_lecture15.o
 
-.debug_frame      0x000000         0x62
+.debug_frame      0x000000         0xca
  *(.debug_frame)
- .debug_frame     0x000000         0x62 build/default/debug/main_lecture13.o
+ .debug_frame     0x000000         0xca build/default/debug/main_lecture15.o
 
-.debug_str        0x000000         0x14
+.debug_str        0x000000         0x27
  *(.debug_str)
- .debug_str       0x000000         0x14 build/default/debug/main_lecture13.o
+ .debug_str       0x000000         0x27 build/default/debug/main_lecture15.o
 
 .debug_loc
  *(.debug_loc)
@@ -235,10 +242,10 @@ __CONFIG1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000         0x51
+                  0x000000         0xad
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x51 build/default/debug/main_lecture13.o
+                  0x000000         0xad build/default/debug/main_lecture15.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -246,7 +253,7 @@ __CONFIG1
 .debug_aranges    0x000000         0x18
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/debug/main_lecture13.o
+                  0x000000         0x18 build/default/debug/main_lecture15.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -836,26 +843,27 @@ LOAD default_isr
 LOAD data_init
 
 __c30_signature
-                  0x000018         0x1e
+                  0x000018         0x18
  __c30_signature
                   0x000018          0x6 build/default/debug/mcu_config.o
  __c30_signature
-                  0x00001e          0x6 build/default/debug/main_lecture13.o
+                  0x00001e          0x6 build/default/debug/main_lecture15.o
  __c30_signature
                   0x000024          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
  __c30_signature
                   0x00002a          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(data_init_standard.o)
- __c30_signature
-                  0x000030          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
 
 .debug_pubtypes
-                  0x000036         0x4c
+                  0x000030         0x76
  .debug_pubtypes
-                  0x000036         0x4c build/default/debug/main_lecture13.o
+                  0x000030         0x76 build/default/debug/main_lecture15.o
 
-.data               0x0800          0xa
- .data              0x0800          0xa build/default/debug/main_lecture13.o
-                    0x0800                  _disp_hex
+.nbss               0x0800          0x2
+ .nbss              0x0800          0x2 build/default/debug/main_lecture15.o
+
+.data               0x0802          0x4
+ .data              0x0802          0x4 build/default/debug/main_lecture15.o
+                    0x0802                  _disp_buf
 
 .config_JTAGEN    0x0083fe          0x2
  .config_JTAGEN
@@ -864,15 +872,19 @@ __c30_signature
 .config_IESO      0x0083fc          0x2
  .config_IESO     0x0083fc          0x2 build/default/debug/mcu_config.o
 
-.text             0x0002ce         0x88
- .text            0x0002ce         0x88 build/default/debug/main_lecture13.o
-                  0x0002ce                  _System_Clock_Init
-                  0x0002de                  _System_IO_Init
-                  0x0002f8                  _main
+.const              0x82ce         0x10 load address 0x0002ce  
+ .const             0x82ce         0x10 build/default/debug/main_lecture15.o
+                    0x82ce                  _disp_hex
 
-.init.delay32     0x000356         0x1c
- .init.delay32    0x000356         0x1c c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-                  0x000356                  ___delay32
+.text             0x0002de        0x11c
+ .text            0x0002de        0x11c build/default/debug/main_lecture15.o
+                  0x0002de                  _System_Clock_Init
+                  0x0002ee                  _System_IO_Init
+                  0x000308                  _Display_Multiplex
+                  0x000352                  _Display_Uint
+                  0x00038a                  _Display_Uhex
+                  0x0003b4                  _System_Timer1_Init
+                  0x0003c8                  _main
 
-.dinit            0x000372         0x10
- .dinit           0x000372         0x10 data_init
+.dinit            0x0003fa         0x12
+ .dinit           0x0003fa         0x12 data_init

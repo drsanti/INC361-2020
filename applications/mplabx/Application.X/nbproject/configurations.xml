@@ -16,6 +16,8 @@
       <itemPath>mcu_config.c</itemPath>
       <itemPath>main_lecture12.c</itemPath>
       <itemPath>main_lecture13.c</itemPath>
+      <itemPath>main_lecture14.c</itemPath>
+      <itemPath>main_lecture15.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -677,6 +679,34 @@
         </C30Global>
       </item>
       <item path="main_lecture12.c" ex="true" overriding="false">
+        <C30>
+        </C30>
+        <C30-AR>
+        </C30-AR>
+        <C30-AS>
+        </C30-AS>
+        <C30-CO>
+        </C30-CO>
+        <C30-LD>
+        </C30-LD>
+        <C30Global>
+        </C30Global>
+      </item>
+      <item path="main_lecture13.c" ex="true" overriding="false">
+        <C30>
+        </C30>
+        <C30-AR>
+        </C30-AR>
+        <C30-AS>
+        </C30-AS>
+        <C30-CO>
+        </C30-CO>
+        <C30-LD>
+        </C30-LD>
+        <C30Global>
+        </C30Global>
+      </item>
+      <item path="main_lecture14.c" ex="true" overriding="false">
       </item>
     </conf>
   </confs>
